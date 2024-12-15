@@ -70,4 +70,3 @@ class RoomOfPeople():
 	def ShowAllPeople(self) -> None:
 		for Person in self.People:
 			print(str(Person))
-

@@ -86,6 +86,18 @@ class Test:
 TestHandler = Test()
 print(str(TestHandler))
 
+#For loops can be very useful for iterating through lists, or going through a range
+#For example if you wanna show all the items in the ListVariableName list you can
+#Use the for loop, creating a variable that you use in place for the items you get from the list, and giving the name of the list like this
+for Item in ListVariableName:
+  print(Item)
+
+#You can also just go through a range of numbers using the range() function
+for i in range(100):
+  print(i)
+#Note, the range() function starts by default at 0 and goes through every number except the one given
+#So this will go from 0 to 99
+
 #And to import libraries from other python programs within the runtime folder
 #We can use import (python file name) to import all the different functions and classes
 import LibraryForImports
@@ -99,17 +111,5 @@ LibraryLogarithm: float = LibraryForImports.Maths.NaturalLogarithm(LibrarySquare
 
 #Which we can the print to the terminal
 print(LibraryLogarithm)
-
-#For loops can be very useful for iterating through lists, or going through a range
-#For example if you wanna show all the items in the ListVariableName list you can
-#Use the for loop, creating a variable that you use in place for the items you get from the list, and giving the name of the list like this
-for Item in ListVariableName:
-  print(Item)
-
-#You can also just go through a range of numbers using the range() function
-for i in range(100):
-  print(i)
-#Note, the range() function starts by default at 0 and goes through every number except the one given
-#So this will go from 0 to 99
 
 #You can also look through the different files in the repository for a deeper look at the different things you can do in python

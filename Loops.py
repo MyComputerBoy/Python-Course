@@ -28,3 +28,37 @@ Numbers: list[str] = ["One", "Three", "Nine", "Two Hundred"]
 #Here we just need to give it the name of the list for it to work
 for number in Numbers:
 	print(number)
+
+
+def CubicPolynomial(x: float) -> float:
+	return 5*x**3 + 19.5*x**2 - 9*x + 3
+
+def DerivativeOfCubicPolynomial(x: float) -> float:
+	return 15*x**2 + 39*x - 9
+
+TargetYValue: float = 25.24
+EstimateX: float = 1
+
+#While loops can easily be made to run infinitely if not handled properly
+#Thus, it is always a good idea to have safety conditions and variables in place to ensure this does never happen
+#It can be done by having a dedicated variable for managing if the loop should keep running and having extra conditions
+#For the loop, like safety limits, for example this example should never have to be run more than a million times
+#Or something has definitely gone wrong
+while CubicPolynomial(EstimateX) != TargetYValue:
+	EstimateX -= CubicPolynomial(EstimateX)/DerivativeOfCubicPolynomial(EstimateX)
+
+#So to make this while loop safer we can make the variable DoRunning and MaxIterations
+DoRunning = True
+MaxIterations = 1000
+Iterations = 0
+EstimateX = 1
+
+while DoRunning:
+	if EstimateX < 0:
+		DoRunning = False
+	elif Iterations >= MaxIterations:
+		DoRunning = False
+	
+	EstimateX -= CubicPolynomial(EstimateX)/DerivativeOfCubicPolynomial(EstimateX)
+
+	Iterations += 1

@@ -10,11 +10,11 @@ StringVariableName: str = "Hello World!"
 print(StringVariableName)
 
 #This is a number
-IntVariableNameA: int = 127
-IntVariableNameB: int = 255
+IntVariableNameA: int = 127          #Int is a whole number only
+FloatVariableNameB: float = 255.99   #Floats are numbers with a decimal too
 
 #This is how to add two numbers and print it to the terminal
-print(IntVariableA + IntVariableB)
+print(IntVariableA + FloatVariableNameB)
 
 #This is how to get an input from the user and writing the prompt
 StringUserInput: str = input("Write a name: ")
@@ -29,3 +29,6 @@ ListVariableName: list = [2,3,5,7,11]
 print(ListVariableName[0])
 print(ListVariableName[1])
 print(ListVariableName[2])
+
+#This is how to convert a string from the user to an int
+IntVariableNameC = int(input("Write a whole number: "))

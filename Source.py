@@ -54,3 +54,17 @@ Main()
 
 
 print(GetUserInput("Write a number: ") + GetUserInput("Write another number for me please: "))
+
+#This is a class
+class Test:
+  #This is to initialise the class with information that it need
+  def __init__(self, Name: str, Age: float):
+    self.Name = Name
+    self.Age = Age
+
+  #This is to make it into a string for users to read
+  def __str__(self):
+    return "Name: " + str(self.Name) + ", age: " + str(self.Age)
+
+TestHandler = Test()
+print(str(TestHandler))

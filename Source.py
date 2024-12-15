@@ -21,3 +21,11 @@ StringUserInput: str = input("Write a name: ")
 
 #How to write a more complex string to the terminal
 print("This is your name %s." % (StringUserInput))
+
+#This is a list
+ListVariableName: list = [2,3,5,7,11]
+
+#How to get an item from a list
+print(ListVariableName[0])
+print(ListVariableName[1])
+print(ListVariableName[2])

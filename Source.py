@@ -14,7 +14,7 @@ IntVariableNameA: int = 127          #Int is a whole number only
 FloatVariableNameB: float = 255.99   #Floats are numbers with a decimal too
 
 #This is how to add two numbers and print it to the terminal
-print(IntVariableA + FloatVariableNameB)
+print(IntVariableNameA + FloatVariableNameB)
 
 #This is how to get an input from the user and writing the prompt
 StringUserInput: str = input("Write a name: ")

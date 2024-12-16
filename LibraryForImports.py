@@ -65,7 +65,7 @@ class Maths():
 
 	def Faculty(self, InputNumber: int) -> int:
 		Output: int = 1
-		for i in range(1, InputNumber):
+		for i in range(1, InputNumber+1):
 			Output *= i
 		return Output
 
@@ -80,8 +80,3 @@ class Maths():
 			#(+ or -)x**(2i+1)/(2i+1)!
 			Output += Sign * Numerator/Denominator
 		return Output
-
-mh = Maths()
-MathTest = mh.Sinus(1)
-print(MathTest)
-input()

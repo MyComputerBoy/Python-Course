@@ -83,7 +83,11 @@ class Test:
   def __str__(self):
     return "Name: " + str(self.Name) + ", age: " + str(self.Age)
 
-TestHandler = Test()
+#We can create a class object handler, this is just a variable
+#To easily handle the class
+TestHandler = Test("Anastasia", 55)
+
+#And to use the dunder str function we can just call the str() function on the class
 print(str(TestHandler))
 
 #For loops can be very useful for iterating through lists, or going through a range

@@ -26,54 +26,62 @@ class Complex():
 
 class Maths():
 	def __init__(self):
-		pass
+		self.TAU: float = 6.283185307179586476925286766559
+		self.PI: float = 3.1415926535897932384626433832
+		self.E: float = 2.718281828459045235360287471352
 
-	def SquareRoot(InputNumber: float, Iterations: int = 100) -> float:
+	def __IsNumber__(self, InputNumber) -> bool:
+		IsInt = type(InputNumber) == int
+		IsFloat = type(InputNumber) == float
+
+		return (not IsInt) and (not IsFloat)
+
+	def SquareRoot(self, InputNumber: float, Iterations: int = 100) -> float:
 		#Newton's Method for calculating square root with Iterations number of Iterations
 		#Starting Estimate
 		Output: float = 1
 
 		#Compute actual Newton's Method with Iterations iterations
 		for i in range(Iterations):
-			Output -= (InputNumber - Output ** 2)/(2*Output)
+			Output -= (Output ** 2 - InputNumber)/(2*Output)
 
 		return Output
 
-	def Exponent(InputNumber: float, Iterations: int = 100) -> float:
+	def Exponent(self, InputNumber: float, Iterations: int = 10000) -> float:
 		#Using the fact that e**x=(1+x/N)**N
-		Output: float = 1+(InputNumber/Iterations)**Iterations
+		Output: float = (1+(InputNumber/Iterations))**Iterations
 
 		return Output
 	
-	def NaturalLogarithm(InputNumber: float, Iterations: int = 100) -> float:
+	def NaturalLogarithm(self, InputNumber: float, Iterations: int = 1000) -> float:
 		#Using the Taylor Serie's of the ln(1+x)=x-x**2/2...
-		InputNumber -= 1
 
-		Output: float = 0
+		Estimate: float = 1
 		for i in range(Iterations):
-			Sign = (-1)**i
-			Numerator = InputNumber ** i
-			Denominator = i
-
-			#(+ or -)x**i/i
-			Output += Sign * Numerator/Denominator
+			Exponentiated: float = Maths.Exponent(Maths, Estimate)
+			Estimate -= (Exponentiated-InputNumber)/Exponentiated
 		
-		return Output
+		return Estimate
 
-	def Faculty(InputNumber: int) -> int:
+	def Faculty(self, InputNumber: int) -> int:
 		Output: int = 1
-		for i in range(InputNumber):
+		for i in range(1, InputNumber):
 			Output *= i
 		return Output
 
-	def Sinus(InputNumber: float, Iterations: int = 100) -> float:
+	def Sinus(self, InputNumber: float, Iterations: int = 100) -> float:
 		#Using the Taylor Serie's for sinus sin(x)=x-x**3/3!+x**5/5!
 		Output: float = 0
-		for i in range(Iterations):
-			Sign = (-1)**i
-			Numerator = InputNumber**(2*i+1)
-			Denominator = Maths.Faculty(2*i+1)
+		for i in range(1, Iterations):
+			Sign = (-1)**(i-1)
+			Numerator = InputNumber**(2*i-1)
+			Denominator = Maths.Faculty(Maths, 2*i-1)
 
 			#(+ or -)x**(2i+1)/(2i+1)!
 			Output += Sign * Numerator/Denominator
 		return Output
+
+mh = Maths()
+MathTest = mh.Sinus(1)
+print(MathTest)
+input()

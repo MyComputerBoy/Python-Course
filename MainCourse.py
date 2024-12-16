@@ -85,7 +85,7 @@ class Test:
 
 #We can create a class object handler, this is just a variable
 #To easily handle the class
-TestHandler = Test(Test, "Anastasia", 55)
+TestHandler = Test("Anastasia", 55)
 
 #And to use the dunder str function we can just call the str() function on the class
 print(str(TestHandler))

@@ -85,7 +85,7 @@ class Test:
 
 #We can create a class object handler, this is just a variable
 #To easily handle the class
-TestHandler = Test("Anastasia", 55)
+TestHandler = Test(Test, "Anastasia", 55)
 
 #And to use the dunder str function we can just call the str() function on the class
 print(str(TestHandler))
@@ -108,10 +108,10 @@ import LibraryForImports
 
 #And to use the functions and classes in a library just use the library name . the function name
 #This library has the class "Maths" which contains different mathematical functions such as the SquareRoot function
-LibrarySquareRoot: float = LibraryForImports.Maths.SquareRoot(10)
+LibrarySquareRoot: float = LibraryForImports.Maths.SquareRoot(LibraryForImports.Maths, 10)
 
 #This computes the natural logarithm of the input (LibrarySquareRoot)
-LibraryLogarithm: float = LibraryForImports.Maths.NaturalLogarithm(LibrarySquareRoot)
+LibraryLogarithm: float = LibraryForImports.Maths.NaturalLogarithm(LibraryForImports.Maths, LibrarySquareRoot)
 
 #Which we can the print to the terminal
 print(LibraryLogarithm)
